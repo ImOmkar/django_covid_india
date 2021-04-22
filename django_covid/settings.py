@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'mziap%e5!%3iuxw@(g^+@h+bw8v=48gokj8$fl2%-!x(z=2zbp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'trackercovid19.herokuapp.com']
 
