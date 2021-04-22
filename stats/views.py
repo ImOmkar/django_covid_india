@@ -8,6 +8,17 @@ from covid import Covid
 
 # Create your views here.
 
+#custom error pages
+
+def error_404_view(request, exception):
+    return render(request, 'stats/error_pages/error_404.html')
+
+def error_500_view(request):
+    return render(request, 'stats/error_pages/error_500.html')
+
+#custom error pages
+
+#maini function
 def index(request):
     covid = Covid()  
 
@@ -21,8 +32,6 @@ def index(request):
 
     response = requests.get("https://api.covid19india.org/state_district_wise.json")
     data = response.json()
-
-    #print(data)
 
     maharashtra = data["Maharashtra"]['districtData']
     andaman_n = data["Andaman and Nicobar Islands"]['districtData']
@@ -62,8 +71,7 @@ def index(request):
     u_p = data["Uttar Pradesh"]['districtData']
     u_k = data["Uttarakhand"]['districtData']
     west_b = data["West Bengal"]['districtData']
-
-    #print(west_b)
+    
 
     #news-api to fetch news from top sources
     newsapi = NewsApiClient(api_key ='c7eb470395e04da68d1a0002d3f4ca8c')

@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('covid19/', admin.site.urls),
     path('', include('stats.urls')),
 ]
+
+
+handler404 = 'stats.views.error_404_view'
+handler500 = 'stats.views.error_500_view'
