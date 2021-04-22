@@ -85,8 +85,6 @@ def index(request):
         desc.append(f['description'])
         img.append(f['urlToImage'])
     india_health_list = zip(url, pub, news, desc, img)
-
-    print(india_health_list)
     
 
     context = {
